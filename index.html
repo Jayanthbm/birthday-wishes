@@ -45,6 +45,9 @@
         var name = params.get('name');
         $(document).ready(function () {
             $('#bname').html(name);
+            setTimeout(function () {
+                $('#bringcake').trigger('click');
+            }, 2000);
         });
 
         var cake = `<div class="container">
@@ -218,7 +221,7 @@
                 $('#message').html('');
                 $('#message').html(`I hope your special day will bring you lots of happiness, love, and fun. You deserve
             them a lot. Enjoy🤗`);
-            }, 16500);
+            }, 17000);
             setTimeout(function () {
                 $('#green').hide();
                 $('#blue').hide();
