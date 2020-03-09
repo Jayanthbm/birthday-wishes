@@ -4,12 +4,14 @@
 <head>
     <meta charset="utf-8">
     <title>Birthday Wishes</title>
+    <link rel="icon" href="favicon.ico">
     <link rel="stylesheet" type="text/css" href="main.css">
     <link href="https://fonts.googleapis.com/css?family=Teko:700&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width , initial-scale=1.0">
 </head>
 
 <body>
+    <div id="a"></div>
     <div id="back">
         <h1>
             <span>Happy</span>
@@ -39,8 +41,9 @@
     <script src="https://code.jquery.com/jquery-3.4.1.js"
         integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
     <script>
+        let params = new URLSearchParams(location.search);
+        var name = params.get('name');
         $(document).ready(function () {
-            var name = 'test';
             $('#bname').html(name);
         });
 
@@ -152,7 +155,7 @@
         </div>`;
         $('#bringcake').click(function () {
             $('#bringcake').hide();
-            $('#loading').html(`Cake is On the Way,<br/> Best things take time`);
+            $('#loading').html(`Cake 🥮 is On the Way,<br /> Best things take time ⌛`);
             setTimeout(function () {
                 $('#cake').html(cake);
             }, 3000);
@@ -160,7 +163,7 @@
                 $('#loading').html('');
             }, 5000);
             setTimeout(function () {
-                $('#loading').html('Adding Candles to Cake');
+                $('#loading').html('Adding Candles to Cake 🎂');
             }, 6600);
             var cd = `<div class="candle">`;
             setTimeout(function () {
@@ -183,13 +186,11 @@
             }, 9600);
             setTimeout(function () {
                 $('#loading').html(`Lighting candles`);
-                $('#message').html(`A shining candle is a sign of goodwill. A beautifully lit up birthday cake looks
-                cheerful and full of life.`);
+                $('#message').html(
+                    `Let’s light the candles and celebrate this special day of your life. Happy birthday ${name}😄.`
+                );
             }, 9800);
             var lc = `<div class="fire"></div>`;
-            setTimeout(function () {
-                $('#light').append(lc);
-            }, 10600);
             setTimeout(function () {
                 $('#light').append(lc);
             }, 10700);
@@ -206,9 +207,34 @@
                 $('#light').append(lc);
             }, 12700);
             setTimeout(function () {
+                $('#light').append(lc);
+            }, 13200);
+            setTimeout(function () {
                 $('#loading').html('');
                 $('#message').html('');
-            }, 12710);
+                $('#message').html(`Don’t ever change! Stay as amazing as you are, my friend😊`);
+            }, 14000);
+            setTimeout(function () {
+                $('#message').html('');
+                $('#message').html(`I hope your special day will bring you lots of happiness, love, and fun. You deserve
+            them a lot. Enjoy🤗`);
+            }, 16500);
+            setTimeout(function () {
+                $('#green').hide();
+                $('#blue').hide();
+                $('#red').hide();
+                $('#ball2').hide();
+                $('#ball1').hide();
+                $('#cake').hide();
+                $('#bringcake').hide();
+                $('#message').hide();
+                $('#messagetext').hide();
+                $('#loading').hide();
+                $('#loadingtext').hide();
+                $('#bname').hide();
+                $('#back').hide();
+                $('#a').html(`<button id="lg" onclick="location.reload();">Load Again</button>`);
+            }, 19000);
         });
     </script>
 </body>
